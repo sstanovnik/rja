@@ -1,0 +1,7 @@
+[package]
+name = "rja_primeri"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+rja = { path = "../rja_proc_macro/" }

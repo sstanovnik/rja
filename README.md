@@ -1,149 +1,124 @@
-# rouille
+# ŕja
 
-![](https://github.com/bnjbvr/rouille/raw/principale/logo.jpeg)
+![](https://github.com/sstanovnik/rja/raw/vodilna/logo.png)
 
-Aren't you _le tired_ from writing Rust programs in English? Do you like saying
-"merde" a lot? Would you like to try something different, in an exotic and
-funny-sounding language? Would you want to bring some French touch to your
-programs?
+Vas pisanje programov jezika Rust v angleščini utruja?
+Čutite notranje zadovoljstvo, ko izrečete "jojmene"?
+Želite izkusiti pisanje visoko zmogljivega in dokazljivo pravilnega programja v maternem jeziku?
+Bi vas veselilo prisostvovanje pri napredku slovenščine v tehnični stroki?
 
-**rouille** (French for _Rust_) is here to save your day, as it allows you to
-write Rust programs in French, using French keywords, French function names,
-French idioms.
+**ŕja** vas bo razveselila!
+Z njo boste lahko uživali vse prednosti pisanja programske kode znotraj ekosistema Rust, a uporabili polnovredne
+ustreznice v slovenščini, ki vas bodo navdale z do sedaj nepredstavljivim občutkov izraznosti pri programiranju.
 
-This has been designed to be used as the official programming language to
-develop the future French sovereign operating system. 
+Ta projekt je bil zasnovan za uporabo kot uradni programski jezik za razvoj bodočega Operacijskega sistema
+slovenske neodvisnosti (OSSN).
 
-If you're from the French or any other governement with French as an official 
-language: I will be awaiting your donations on
-[liberapay](https://liberapay.com/bnjbvr/).
+Če ste, dragi bralec, član slovenske vlade ali ste na odločevalskem položaju, ki vam narekuje ohranjanje slovenščine,
+bomo veseli vaše finančne podpore na [liberapay](https://liberapay.com/bnjbvr/).
 
-You're from Quebec (or elsewhere) and don't feel at ease using only French words? 
+Lahko ste brez skrbi, saj slovenska inačica programskega jezika Rust podpira več narečij, prav tako pa lahko še vedno
+uporabljate angleške izraze in jih vmešate v programsko kodo po želji, če vam to narekuje situacija.
 
-Don't worry!
-French Rust is fully compatible with English-Rust, so you can mix both at your
-convenience.
+Nadaljujmo s primerom uporabe ŕje:
 
-Here's an example of what can be achieved with Rouille:
-
-### trait and impl (aka convention et réalisation)
+### Uporaba
 
 ```rust
-rouille::rouille! {
-    utilisons std::collections::Dictionnaire comme Dico;
+rja::rja! {
+    zunanji zaboj rja;
 
-    convention CléValeur {
-        fonction écrire(&soi, clé: Chaîne, valeur: Chaîne);
-        fonction lire(&soi, clé: Chaîne) -> PeutÊtre<&Chaîne>;
+    uporabi std::collections::Slovar kot Besednik;
+
+    značilnost KljučVrednost {
+        funkcija zapiši(&jaz, ključ: Niz, vrednost: Niz);
+        funkcija preberi(&jaz, ključ: Niz) -> Izid<Mogoče<&Niz>, Niz>;
     }
 
-    statique mutable DICTIONNAIRE: PeutÊtre<Dico<Chaîne, Chaîne>> = Rien;
+    ustaljen spremenljiv SLOVAR: Mogoče<Besednik<Niz, Niz>> = Nič;
 
-    structure Concrète;
+    skupek Nastavek;
 
-    réalisation CléValeur pour Concrète {
-        fonction écrire(&soi, clé: Chaîne, valeur: Chaîne) {
-            soit dico = dangereux {
-                DICTIONNAIRE.prendre_ou_insérer_avec(Défaut::défaut)
+    izvedba KljučVrednost za Nastavek {
+        funkcija zapiši(&jaz, ključ: Niz, vrednost: Niz) {
+            bodi besednik = nevarno {
+                SLOVAR.pridobi_ali_vstavi_z(Privzeto::privzeto)
             };
-            dico.insérer(clé, valeur);
+            besednik.vstavi(ključ, vrednost);
         }
-        fonction lire(&soi, clé: Chaîne) -> Résultat<PeutÊtre<&Chaîne>, Chaîne> {
-            si soit Quelque(dico) = dangereux { DICTIONNAIRE.en_réf() } {
-                Bien(dico.lire(&clé))
-            } sinon {
-                Arf("fetchez le dico".vers())
+        funkcija preberi(&jaz, ključ: Niz) -> Izid<Mogoče<&Niz>, Niz> {
+            če bodi Nekaj(besednik) = nevarno { SLOVAR.kot_sklic() } {
+                Uspešno(besednik.pridobi(&ključ))
+            } sicer {
+                Napaka("pridobivanje slovarja".v())
             }
         }
     }
 }
 ```
 
-### Support for regional languages
+### Podpora za slovenska narečja
 
 ```rust
-#[légal(code_inaccessible)]
-fonction secondaire() {
-    merde!("oh non"); // for the true French experience
-    calisse!("tabarnak"); // for friends speaking fr-ca
-    oups!("fetchez la vache"); // in SFW contexts
+#[dovoli(nedosegljiva_koda)]
+funkcija drugotna() {
+    jojmene!("neki ne dela");    // za osrednjeslovensko regijo
+    porkamadona!("ma ne djela"); // za wajdušno
+    čuj!("nena dela");           // za tiste bližje kurji glavi
 }
 ```
 
 ### Other examples
 
-See the [examples](./examples/src/main.rs) to get a rough sense of the whole
-syntax. Voilà, that's it.
+Preglej [primere](primeri/src/main.rs) za obširnejši pregled nad zmožnostmi jezika.
 
-## les contributions
+## Ostali jeziki
 
-First of all, _merci beaucoup_ for considering participating to this joke, the
-French government will thank you later! Feel free to throw in a few identifiers
-here and there, and open a pull-request against the `principale` (French for
-`main`) branch.
-
-Please don't introduce swear words, though: we will not excuse your French.
-
-## but why would you do zat
-
-- horsin around
-- playing with raw proc macros
-- making a bit of fun about programming languages that do this seriously,
-  though I can see their utility.
-- winking at [Marcel](https://github.com/brouberol/marcel)
-- c'est chic
-
-## Other languages
-
+- Arabic: [sada](https://github.com/LAYGATOR/sada)
+- Bulgarian: [ryzhda](https://github.com/gavadinov/ryzhda)
+- Catalan: [rovell](https://github.com/gborobio73/rovell)
+- Chinese: [xiu (锈)](https://github.com/lucifer1004/xiu)
+- Corsican: [rughjina](https://github.com/aldebaranzbradaradjan/rughjina)
+- Croatian: [hrđa](https://github.com/njelich/hrdja)
+- Czech: [rez](https://github.com/radekvit/rez)
+- Danish: [rust?](https://github.com/LunaTheFoxgirl/rust-dk)
 - Dutch: [roest](https://github.com/jeroenhd/roest)
-- German: [rost](https://github.com/michidk/rost)
-- Polish: [rdza](https://github.com/phaux/rdza)
-- Italian: [ruggine](https://github.com/DamianX/ruggine)
-- Russian: [Ржавый](https://github.com/Sanceilaks/rzhavchina)
 - Esperanto: [rustteksto](https://github.com/dscottboggs/rustteksto)
-- Toki Pona: [jaki kiwen](https://github.com/jgcodes2020/jaki-kiwen)
+- Estonian: [rooste](https://github.com/hanshs/rooste)
+- Finnish: [ruoste](https://github.com/vkoskiv/ruoste)
+- French: [rouille](https://github.com/bnjbvr/rouille/)
+- German: [rost](https://github.com/michidk/rost)
+- Greek: [skouriasmeno](https://github.com/devlocalhost/skouriasmeno)
 - Hindi: [zung](https://github.com/rishit-khandelwal/zung)
 - Hungarian: [rozsda](https://github.com/jozsefsallai/rozsda)
-- Chinese: [xiu (锈)](https://github.com/lucifer1004/xiu)
-- Spanish: [rustico](https://github.com/UltiRequiem/rustico)
-- Korean: [Nok (녹)](https://github.com/Alfex4936/nok)
-- Finnish: [ruoste](https://github.com/vkoskiv/ruoste)
-- Arabic: [sada](https://github.com/LAYGATOR/sada)
-- Turkish: [pas](https://github.com/ekimb/pas)
-- Vietnamese: [gỉ](https://github.com/Huy-Ngo/gir)
-- Japanese: [sabi (錆)](https://github.com/yuk1ty/sabi)
-- Danish: [rust?](https://github.com/LunaTheFoxgirl/rust-dk)
-- Marathi: [gan̄ja](https://github.com/pranavgade20/ganja)
-- Romanian: [rugină](https://github.com/aionescu/rugina)
-- Czech: [rez](https://github.com/radekvit/rez)
-- Ukrainian: [irzha](https://github.com/brokeyourbike/irzha)
-- Bulgarian: [ryzhda](https://github.com/gavadinov/ryzhda)
-- Slovak: [hrdza](https://github.com/TheMessik/hrdza)
-- Catalan: [rovell](https://github.com/gborobio73/rovell)
-- Corsican: [rughjina](https://github.com/aldebaranzbradaradjan/rughjina)
 - Indonesian: [karat](https://github.com/annurdien/karat)
-- Greek: [skouriasmeno](https://github.com/devlocalhost/skouriasmeno)
-- Thai: [sanim (สนิม)](https://github.com/korewaChino/sanim)
-- Swiss: [roeschti](https://github.com/Georg-code/roeschti)
-- Swedish: [rost](https://github.com/vojd/rost/)
-- Croatian: [hrđa](https://github.com/njelich/hrdja)
-- Persian: [zangar (زنگار)](https://github.com/ui-ce/zangar)
-- Malagasy: [arafesina](https://github.com/luckasRanarison/arafesina)
-- Latin: [ferrugo](https://github.com/pianoman911/ferrugo)
-- Norwegian: [korrosjon](https://github.com/datagutt/korrosjon)
-- Estonian: [rooste](https://github.com/hanshs/rooste)
+- Italian: [ruggine](https://github.com/DamianX/ruggine)
+- Japanese: [sabi (錆)](https://github.com/yuk1ty/sabi)
 - Kannada: [tukku (ತುಕ್ಕು)](https://github.com/sanathNU/tukku.git)
+- Korean: [Nok (녹)](https://github.com/Alfex4936/nok)
+- Latin: [ferrugo](https://github.com/pianoman911/ferrugo)
+- Malagasy: [arafesina](https://github.com/luckasRanarison/arafesina)
+- Marathi: [gan̄ja](https://github.com/pranavgade20/ganja)
 - Nepali: [khiya (खिया)](https://github.com/sudanchapagain/khiya.git)
+- Norwegian: [korrosjon](https://github.com/datagutt/korrosjon)
+- Persian: [zangar (زنگار)](https://github.com/ui-ce/zangar)
+- Polish: [rdza](https://github.com/phaux/rdza)
+- Romanian: [rugină](https://github.com/aionescu/rugina)
+- Russian: [Ржавый](https://github.com/Sanceilaks/rzhavchina)
 - Sanskrit: [jangam](https://github.com/ishantanu/jangam.git)
 - Scottish Gaelic: [meirg](https://github.com/KSPAtlas/meirg)
+- Slovak: [hrdza](https://github.com/TheMessik/hrdza)
+- Spanish: [rustico](https://github.com/UltiRequiem/rustico)
+- Swedish: [rost](https://github.com/vojd/rost/)
+- Swiss: [roeschti](https://github.com/Georg-code/roeschti)
+- Thai: [sanim (สนิม)](https://github.com/korewaChino/sanim)
+- Toki Pona: [jaki kiwen](https://github.com/jgcodes2020/jaki-kiwen)
+- Turkish: [pas](https://github.com/ekimb/pas)
+- Ukrainian: [irzha](https://github.com/brokeyourbike/irzha)
+- Vietnamese: [gỉ](https://github.com/Huy-Ngo/gir)
 - All of the above: [unirust](https://github.com/charyan/unirust)
 
-## un grand merci
+## Licenca
 
-- [@VentGrey](https://twitter.com/VentGrey) for making a logo!
-
-## la license
-
-[License Publique Rien à Branler](http://sam.zoy.org/lprab/),
-_le_ official translation of the [WTFPL](http://www.wtfpl.net/)
-by the same author.
+Delo je licencirano pod slovenskim prevodom [WTFPL](http://www.wtfpl.net/),
+licence _delaj kar hočeš_.
